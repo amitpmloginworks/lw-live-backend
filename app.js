@@ -33,12 +33,23 @@ var requestIp = require('request-ip');
  // chetan.singh userid == 147 
 // create connection to database 
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
+/*
 const db = mysql.createConnection ({
     host: '67.222.23.104',  
     user: 'pallab_portal',  
     password: '1#password',  
     database: 'pallab_portal'  
 }); 
+*/
+ 
+ 
+const db = mysql.createConnection ({   
+    host: '67.222.23.104',  
+    user: 'loginwor_newlogin',  
+    password: '9Q3@;R(%HYpE',  
+    database: 'loginwor_newlogin'  
+}); 
+
 
 // connect to database
 db.connect((err) => {
