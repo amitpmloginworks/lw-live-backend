@@ -943,10 +943,10 @@ console.log("qry2==",qry2)
 db.query(qry2, (err2, result2) => {
 if (err2) {  return res.status(500).json({ message: 'errr', status :500, wpstatus:0 });   }
 TermStatus = result2[0].term_taxonomy_id;
-if(termstat==25) {
+if(TermStatus==25) {
 termstat=22;	
 }
-if(termstat==26) {
+if(TermStatus==26) {
 termstat=23;	
 }
 	
