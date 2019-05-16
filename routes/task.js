@@ -548,9 +548,9 @@ db.query(usernameQuery1, (err, result) => {
     let NewReviews=0; 
 
     let Query2 = " SELECT count(*) as countsno FROM `wp_notification` WHERE `notify_user_id` = '"+userid+"' and notify_read='0'";   
-    db.query(Query2, (err2, result2) => {   if (err2) {  }    
+    db.query(Query2, (err2, result2) => {   if (err2) {  }     
     NewNotify = result2[0].countsno; 
-   let query3="SELECT count(*) as countsno FROM `wp_posts` a inner join `wp_term_relationships` b on a.ID=b.object_id  inner join wp_terms c on b.term_taxonomy_id = c.term_id WHERE a.`post_author` =  '"+userid+"'  and a.post_type ='fast_ticket' and a.fb_review='open' and c.term_id='23' group by ID DESC";   
+   let query3="SELECT count(*) as countsno FROM `wp_posts` a inner join `wp_term_relationships` b on a.ID=b.object_id  inner join wp_terms c on b.term_taxonomy_id = c.term_id WHERE a.`post_author` =  '"+userid+"'  and a.post_type ='fast_ticket' and a.fb_review='open' and c.term_id='26' group by ID DESC";   
       db.query(query3, (err3, result3) => {   if (err3) {  } 
       if(result3.length > 0){
         NewReviews = result3.length;   
