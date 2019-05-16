@@ -909,6 +909,7 @@ taskrightside:(req, res) =>  {
   let taskid=req.body.taskid;
   let userid=req.body.userid; 
   let TermStatus="";
+  let termstat="";
   let TermCat="";
   let TermNameStatus="";
   let TermNameCat="";
@@ -942,6 +943,13 @@ console.log("qry2==",qry2)
 db.query(qry2, (err2, result2) => {
 if (err2) {  return res.status(500).json({ message: 'errr', status :500, wpstatus:0 });   }
 TermStatus = result2[0].term_taxonomy_id;
+if(termstat==25) {
+termstat=22;	
+}
+if(termstat==26) {
+termstat=23;	
+}
+	
 TermCat = result2[1].term_taxonomy_id;   
 let qry3 = "SELECT * FROM `wp_terms` where term_id='" +TermStatus + "'";   
 db.query(qry3, (err3, result3) => {
@@ -953,7 +961,7 @@ db.query(qry4, (err4, result4) => {
 if (err4) {  return res.status(500).json({ message: 'errr', status :500, wpstatus:0 });   } 
 post_date=result4[0].post_date;
 post_date_gmt =result4[0].post_date_gmt;
-return res.status(200).json({  message: "Data recevied successfully.", status :200, wpstatus:1,TermStatus:TermStatus,TermCat:TermCat,TermNameStatus:TermNameStatus,post_date:post_date,post_date_gmt:post_date_gmt,taskid:taskid });  
+return res.status(200).json({  message: "Data recevied successfully.", status :200, wpstatus:1,TermStatus:termstat,TermCat:TermCat,TermNameStatus:TermNameStatus,post_date:post_date,post_date_gmt:post_date_gmt,taskid:taskid });  
 });
 });
 
