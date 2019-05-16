@@ -662,15 +662,16 @@ let metaarrval;
                 console.log("success before loop");
             }); 
              
-			    let usernameQuery102 ="INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES('" + wppostID + "','30','0')";
-                db.query(usernameQuery102, (err4, result4) => {  console.log("success in loop ");
-              });
+			  
 			
 			  
                   let usernameQuery103 ="INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES('" + wppostID + "','27','0')";       
               db.query(usernameQuery103, (err4, result4) => {  console.log("success after loop"); }); 
                 
-				 
+				
+				   let usernameQuery102 ="INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES('" + wppostID + "','30','0')";
+                db.query(usernameQuery102, (err4, result4) => {  console.log("success in loop ");
+              });
 			   
 			  
               let usernameQuery2 = "UPDATE `wp_posts` SET `guid`='https://loginworks.net/portal/my-account/ticket/" + wppostID + "' WHERE ID='" +wppostID + "'";  
