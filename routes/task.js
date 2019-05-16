@@ -73,7 +73,7 @@ module.exports = {
                     styleClassvar="chat-message right";
                     handsvar=1;
 console.log("result[i].comment_img==",result[i].comment_img); 
-                    if(result[i].comment_img != "") {   
+                    if(result[i].comment_img != null) {   
                       imgmetavalue=result[i].comment_img;    
                       //imgmetatitle=imgmetavalue.split(Urllinks+'/assets/img/')[1];
                       imgmetatitle=imgmetavalue.split('/assets/img/')[1];
@@ -105,7 +105,7 @@ console.log("result[i].meta_value==",result[i].meta_value);
                     handsvar=2;      
                   } 
                  
-                  if(result[i].comment_img != "") { 
+                  if(result[i].comment_img != null) {  
                     imgmetavalue=result[i].comment_img;    
                    // imgmetatitle=imgmetavalue.split(Urllinks+'/assets/img/')[1];
                     imgmetatitle=imgmetavalue.split('/assets/img/')[1];
