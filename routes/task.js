@@ -25,7 +25,7 @@ module.exports = {
     
     var getdescription=0;
 
-    var now = new Date();
+    var now = new Date().toLocaleString('en-AU', { timeZone: 'Asia/Kolkata' }); 
     
       let wppostID = req.body.postid;
       let userid=req.body.userid;
@@ -51,7 +51,7 @@ module.exports = {
           if (result1.length > 0) {
 
           for (var j = 0; j < result1.length; j++){  
-               var datecurrent = dateFormat(result1[j].comment_date, "yyyy-mm-dd").toLocaleString('en-AU', { timeZone: 'Asia/Kolkata' });  
+               var datecurrent = dateFormat(result1[j].comment_date, "yyyy-mm-dd");  
              //let usernameQuery1 = "SELECT * FROM `wp_comments` WHERE `comment_post_ID` = '" + result1[j].comment_post_ID + "' and DATE(comment_date) =DATE('"+datecurrent+"')";  
              let usernameQuery1 = "SELECT * FROM `wp_comments` a join wp_usermeta b on a.user_id=b.user_id WHERE a.`comment_post_ID` = '" + result1[j].comment_post_ID + "' and DATE(a.comment_date) =DATE('"+datecurrent+"')  and b.meta_key='_attachments' group by a.comment_ID"
              db.query(usernameQuery1, (err, result) => {        
