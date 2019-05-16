@@ -87,7 +87,7 @@ console.log("result[i].meta_value==",result[i].meta_value);
                      
 
                    // if(i==0 && getdescription == 0) {  
-                      if(result[i].comment_description != "" ) {               
+                      if(result[i].comment_description != null ) {                
                         second_array.push({ comment_ID:result[i].comment_ID,comment_post_ID:result[i].comment_post_ID,comment_author:result[i].comment_author,comment_author_email:result[i].comment_author_email,comment_date:result[i].comment_date,comment_content:"Task Description : "+result[i].comment_description,comment_approved:result[i].comment_approved,comment_parent:result[i].comment_parent,user_id:result[i].user_id,posttime:dateFormat(result[i].comment_date, "h:MM tt"),styleClass:styleClassvar,hands:handsvar, wptitle:imgmetatitle,wpextension:imgmetaext,wpurl:Urllinks+imgmetavalue,Usrimgleft:Usrimgleft });  
                         imgmetavalue="";  
                         imgmetatitle=""; 
@@ -118,7 +118,7 @@ console.log("result[i].meta_value==",result[i].meta_value);
                    }
                      console.log("Usrimgleft==",Usrimgleft); 
                    //if(i!=0 || getdescription==1)   { 
-                    if(result[i].comment_description == "")   {       
+                    if(result[i].comment_description == null)   {       
                     getdescription=1;
                     
                    second_array.push({ comment_ID:result[i].comment_ID,comment_post_ID:result[i].comment_post_ID,comment_author:result[i].comment_author,comment_author_email:result[i].comment_author_email,comment_date:result[i].comment_date,comment_content:result[i].comment_content,comment_approved:result[i].comment_approved,comment_parent:result[i].comment_parent,user_id:result[i].user_id,posttime:dateFormat(result[i].comment_date, "h:MM tt"),styleClass:styleClassvar,hands:handsvar, wptitle:imgmetatitle,wpextension:imgmetaext,wpurl:Urllinks+imgmetavalue,Usrimgleft:Usrimgleft });       
