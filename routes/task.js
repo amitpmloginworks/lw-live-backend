@@ -660,13 +660,15 @@ let metaarrval;
               let usernameQuery101="INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES('" + wppostID + "','25','0')";
               db.query(usernameQuery101, (err4, result4) => {  
                 console.log("success before loop");
-                let usernameQuery102 ="INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES('" + wppostID + "','30','0')";
-                db.query(usernameQuery102, (err4, result4) => {  console.log("success in loop ");
-                let usernameQuery103 ="INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES('" + wppostID + "','" + postcat + "','0')";       
-              db.query(usernameQuery103, (err4, result4) => {  console.log("success after loop"); }); 
-              }); 
             }); 
              
+			    let usernameQuery102 ="INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES('" + wppostID + "','30','0')";
+                db.query(usernameQuery102, (err4, result4) => {  console.log("success in loop ");
+              });
+			  
+			   let usernameQuery103 ="INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES('" + wppostID + "','" + postcat + "','0')";       
+              db.query(usernameQuery103, (err4, result4) => {  console.log("success after loop"); });  
+			  
               let usernameQuery2 = "UPDATE `wp_posts` SET `guid`='https://loginworks.net/portal/my-account/ticket/" + wppostID + "' WHERE ID='" +wppostID + "'";  
               db.query(usernameQuery2, (err2, result2) => {
               if (err2) {
