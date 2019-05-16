@@ -25,7 +25,7 @@ module.exports = {
     
     var getdescription=0;
 
-    var now = new Date().toLocaleString('en-AU', { timeZone: 'Asia/Kolkata' }); 
+    var now = new Date().toLocaleString('en-AU', { timeZone: 'Asia/Kolkata' });  
     
       let wppostID = req.body.postid;
       let userid=req.body.userid;
@@ -61,6 +61,7 @@ module.exports = {
                  let incrementval=0;
                  second_array=[];     
               for (var i = 0; i < result.length; i++){
+				   imgmetatitle="";  
                     datefirst= dateFormat(now, "mm/dd/yyyy");
                     datedb=dateFormat(result[i].comment_date, "mm/dd/yyyy");
                   if(datefirst==datedb){  
