@@ -73,7 +73,7 @@ module.exports = {
                     styleClassvar="chat-message right";
                     handsvar=1;
 console.log("result[i].comment_img==",result[i].comment_img); 
-                    if(result[i].comment_img != 0) {   
+                    if(result[i].comment_img != "") {   
                       imgmetavalue=result[i].comment_img;    
                       //imgmetatitle=imgmetavalue.split(Urllinks+'/assets/img/')[1];
                       imgmetatitle=imgmetavalue.split('/assets/img/')[1];
@@ -105,7 +105,7 @@ console.log("result[i].meta_value==",result[i].meta_value);
                     handsvar=2;      
                   } 
                  
-                  if(result[i].comment_img != 0) { 
+                  if(result[i].comment_img != "") { 
                     imgmetavalue=result[i].comment_img;    
                    // imgmetatitle=imgmetavalue.split(Urllinks+'/assets/img/')[1];
                     imgmetatitle=imgmetavalue.split('/assets/img/')[1];
@@ -676,7 +676,7 @@ let metaarrval;
 			
 			   
 			  
-              let usernameQuery2 = "UPDATE `wp_posts` SET `guid`='https://loginworks.net/portal/my-account/ticket/" + wppostID + "' WHERE ID='" +wppostID + "'";  
+              let usernameQuery2 = "UPDATE `wp_posts` SET `guid`='https://loginworks.com/portal/my-account/ticket/" + wppostID + "' WHERE ID='" +wppostID + "'";  
               db.query(usernameQuery2, (err2, result2) => {
               if (err2) {
                   return res.status(500).json({ message: 'errr4', status :500, wpstatus:0 });
@@ -743,8 +743,7 @@ else {
                   let usernameQuery1 = "INSERT INTO `wp_posts` (`post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`,`post_status`, `comment_status`, `ping_status`,`post_password`, `post_name`, `to_ping`,`pinged`, `post_modified`, `post_modified_gmt`,`post_content_filtered`, `post_parent`, `guid`,`menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES('" + userid + "','" + datecurrent + "','" + datecurrent + "','','" + fileName + "','','inherit','open','closed','','" + fileName + "','','','" + datecurrent + "','" + datecurrent + "','','0','"+finalimglink+"','0','attachment','image/jpg','0' )"; 
       db.query(usernameQuery1, (err1, result1) => {        
       if (err1) { return res.status(500).json({ message: 'errr5', status :500, msg:err1, wpstatus:0 });  }
-
-      
+ 
 
         let Qry201 = "UPDATE `wp_comments` set  comment_img='"+finalimglink+"' where comment_ID='"+commentID+"'"; 
         db.query(Qry201, (er201, res201) => {     });           
@@ -943,6 +942,7 @@ console.log("qry2==",qry2)
 db.query(qry2, (err2, result2) => {
 if (err2) {  return res.status(500).json({ message: 'errr', status :500, wpstatus:0 });   }
 TermStatus = result2[0].term_taxonomy_id;
+
 if(TermStatus==25) {
 termstat=22;	
 }
@@ -1002,7 +1002,7 @@ var now = new Date().toLocaleString('en-AU', { timeZone: 'Asia/Kolkata' });
         let incrementval = 0; 
         let i=0;     
         var datecurrent = dateFormat(result[i].comment_date, "dd mmm yyyy");
-        if(result[i].comment_img != 0) {  
+        if(result[i].comment_img != "") {  
           imgmetavalue=result[i].comment_img;    
           //imgmetatitle=imgmetavalue.split(Urllinks+'/assets/img/')[1];
           imgmetatitle=imgmetavalue.split('/assets/img/')[1];
