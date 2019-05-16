@@ -1073,8 +1073,8 @@ taskfeedback:(req, res) =>   {
                      if(result4.length == 0){
                       return res.status(200).json({ status :200, message:"Data saved successfully.",wpstatus:1 });
                      }
-                     else {  
-                      let qry3 = "update `wp_term_relationships` set term_taxonomy_id='26' WHERE `object_id` = '" + postid + "' and term_taxonomy_id='22'";    
+                     else {   
+                      let qry3 = "update `wp_term_relationships` set term_taxonomy_id='26' WHERE `object_id` = '" + postid + "' and term_taxonomy_id='25'";    
                       db.query(qry3, (er3, result3) => {              
                          if (er3) {
                            return res.status(500).json({ message: 'errr5', status :500, msg:er3,wpstatus:0 });
