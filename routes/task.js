@@ -657,10 +657,10 @@ let metaarrval;
              
 
               // insert into  wp_term_relationships table 
-              let usernameQuery101="INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES('" + wppostID + "','22','0')";
+              let usernameQuery101="INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES('" + wppostID + "','25','0')";
               db.query(usernameQuery101, (err4, result4) => {  
                 console.log("success before loop");
-                let usernameQuery102 ="INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES('" + wppostID + "','25','0')";
+                let usernameQuery102 ="INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES('" + wppostID + "','30','0')";
                 db.query(usernameQuery102, (err4, result4) => {  console.log("success in loop ");
                 let usernameQuery103 ="INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES('" + wppostID + "','" + postcat + "','0')";       
               db.query(usernameQuery103, (err4, result4) => {  console.log("success after loop"); }); 
