@@ -1011,7 +1011,7 @@ var now = new Date().toLocaleString('en-AU', { timeZone: 'Asia/Kolkata' });
          } 
         third_array.push(result[i].comment_ID); 
         console.log(dateFormat(result[i].comment_hour, "d mmm yyyy, H:MM")) 
-                 second_array.push({ comment_ID:result[i].comment_ID,comment_post_ID:result[i].comment_post_ID,comment_author:result[i].comment_author,comment_author_email:result[i].comment_author_email,comment_date:result[i].comment_date,comment_content:result[i].comment_content,comment_approved:result[i].comment_approved,comment_parent:result[i].comment_parent,user_id:result[i].user_id,posttime:dateFormat(result[i].comment_date, "h:MM tt"), wptitle:imgmetatitle,wpextension:imgmetaext,wpurl:Urllinks+imgmetavalue,datecurrent:datecurrent,comment_hour: result[i].comment_hour });      
+                 second_array.push({ comment_ID:result[i].comment_ID,comment_post_ID:result[i].comment_post_ID,comment_author:result[i].comment_author,comment_author_email:result[i].comment_author_email,comment_date:result[i].comment_date,comment_content:result[i].comment_description,comment_approved:result[i].comment_approved,comment_parent:result[i].comment_parent,user_id:result[i].user_id,posttime:dateFormat(result[i].comment_date, "h:MM tt"), wptitle:imgmetatitle,wpextension:imgmetaext,wpurl:Urllinks+imgmetavalue,datecurrent:datecurrent,comment_hour: result[i].comment_hour });      
     
                  let Query1 = "SELECT * FROM `hours_spent`  WHERE hs_postid = '" + wppostID + "' order by hs_id DESC";     
                  console.log("Query1==",Query1);  
