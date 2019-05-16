@@ -73,7 +73,7 @@ module.exports = {
                     styleClassvar="chat-message right";
                     handsvar=1;
 console.log("result[i].comment_img==",result[i].comment_img); 
-                    if(result[i].comment_img != null) { 
+                    if(result[i].comment_img != 0) {   
                       imgmetavalue=result[i].comment_img;    
                       //imgmetatitle=imgmetavalue.split(Urllinks+'/assets/img/')[1];
                       imgmetatitle=imgmetavalue.split('/assets/img/')[1];
