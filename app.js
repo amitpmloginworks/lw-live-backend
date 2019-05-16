@@ -42,14 +42,21 @@ const db = mysql.createConnection ({
 }); 
 */
  
- 
+/* 
 const db = mysql.createConnection ({   
     host: '67.222.23.104',  
     user: 'loginwor_newlogin',  
     password: '9Q3@;R(%HYpE',  
     database: 'loginwor_newlogin'  
 }); 
+*/
 
+const db = mysql.createConnection ({   
+    host: '67.222.23.104',  
+    user: 'loginwor_vtigerw',  
+    password: 'QB*A_P%sl,uH',  
+    database: 'loginwor_vtigerwordpress'   
+}); 
 
 // connect to database
 db.connect((err) => {
