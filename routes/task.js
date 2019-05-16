@@ -61,7 +61,10 @@ module.exports = {
                  let incrementval=0;
                  second_array=[];     
               for (var i = 0; i < result.length; i++){
-				   imgmetatitle="";  
+				    imgmetavalue="";  
+                        imgmetatitle=""; 
+                        imgmetaext=""; 
+                        Usrimgleft="";   
                     datefirst= dateFormat(now, "mm/dd/yyyy");
                     datedb=dateFormat(result[i].comment_date, "mm/dd/yyyy");
                   if(datefirst==datedb){  
@@ -962,6 +965,8 @@ db.query(qry4, (err4, result4) => {
 if (err4) {  return res.status(500).json({ message: 'errr', status :500, wpstatus:0 });   } 
 post_date=result4[0].post_date;
 post_date_gmt =result4[0].post_date_gmt;
+console.log("post_date_gmt==",post_date_gmt)
+console.log("post_date_gmt==",post_date_gmt.toLocaleString('en-AU', { timeZone: 'Asia/Kolkata' }))
 return res.status(200).json({  message: "Data recevied successfully.", status :200, wpstatus:1,TermStatus:termstat,TermCat:TermCat,TermNameStatus:TermNameStatus,post_date:post_date,post_date_gmt:post_date_gmt,taskid:taskid });  
 });
 });
