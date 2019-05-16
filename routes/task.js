@@ -666,7 +666,7 @@ let metaarrval;
                 db.query(usernameQuery102, (err4, result4) => {  console.log("success in loop ");
               });
 			
-			 setTimeout(() => { 
+			 setTimeout(() => {  
                   let usernameQuery103 ="INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES('" + wppostID + "','" + postcat + "','0')";       
               db.query(usernameQuery103, (err4, result4) => {  console.log("success after loop"); }); 
                  },500) 
