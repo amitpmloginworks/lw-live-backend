@@ -79,7 +79,8 @@ console.log("result[i].comment_img==",result[i].comment_img);
                       imgmetatitle=imgmetavalue.split('/assets/img/')[1];
                       let fileext=imgmetatitle.split('.')[1];
                       imgmetaext="."+fileext;   
-                     }       
+                     }   
+console.log("result[i].meta_value==",result[i].meta_value); 					 
                if(result[i].meta_value != ""){
                 Usrimgleft=Urllinks+result[i].meta_value;   
                }
