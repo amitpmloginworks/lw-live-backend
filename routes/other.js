@@ -114,5 +114,24 @@ getcountry:(req, res) => {
 },  
 
 
+    paymentcredential:(req, res) => {  
+        let userid=req.body.userid; 
+        let PaypalSandbox="AYcJ5QLBDuon8ChZZId3ELqrVD_rLIxFNB3_JfzKBdjTyOa2NDV0FeGRnFcxhyIUtImnmWzARFuORp9_";
+        let PaypalProduction=""; 
+// // Environments: PayPalEnvironmentNoNetwork, PayPalEnvironmentSandbox, PayPalEnvironmentProduction		
+		let PaypalEnv="PayPalEnvironmentSandbox"; 
+		
+	let usernameQuery1 = "SELECT * FROM `wp_country`";     
+  db.query(usernameQuery1, (err, result) => {  
+    if (err) {     
+      return res.status(500).json({status :500,payproduction:PaypalProduction,paysandbox:PaypalSandbox,payenv:PaypalEnv,wpstatus:1});   
+    }  
+   return res.status(200).json({status :200,payproduction:PaypalProduction,paysandbox:PaypalSandbox,payenv:PaypalEnv,wpstatus:1});
+}); 
+
+       
+}, 
+
+
 
 };

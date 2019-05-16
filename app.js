@@ -23,7 +23,7 @@ const { taskcreatewp, taskfimgwp, taskactivewp } = require('./routes/task');
 const { taskrightside } = require('./routes/task');   
 const { taskfeedback, TaskApproveDis } = require('./routes/task'); 
 
-const { dashboardwp, notificationwp, getcountry } = require('./routes/other');  
+const { dashboardwp, notificationwp, getcountry,paymentcredential } = require('./routes/other');  
 
 const port = 3555;        
 var localStorage = require('localStorage')       
@@ -171,6 +171,7 @@ app.post('/getcountry',getcountry);
 
 app.post('/tasknotifyup',tasknotifyUp);  
 
+app.post('/paymentcredential',paymentcredential); 
 
 
 
