@@ -965,9 +965,9 @@ db.query(qry4, (err4, result4) => {
 if (err4) {  return res.status(500).json({ message: 'errr', status :500, wpstatus:0 });   } 
 post_date=result4[0].post_date;
 post_date_gmt =result4[0].post_date_gmt; 
- 
-post_date=post_date.toLocaleString('en-AU', { timeZone: 'Asia/Kolkata' });
-post_date_gmt=post_date_gmt.toLocaleString('en-AU', { timeZone: 'Asia/Kolkata' })
+  
+//post_date=post_date.toLocaleString('en-AU', { timeZone: 'Asia/Kolkata' });
+//post_date_gmt=post_date_gmt.toLocaleString('en-AU', { timeZone: 'Asia/Kolkata' })
 
 console.log("post_date_gmt==",post_date_gmt)
 console.log("post_date_gmt==",post_date_gmt.toLocaleString('en-AU', { timeZone: 'Asia/Kolkata' }))
