@@ -940,7 +940,7 @@ console.log("qry2==",qry2)
 db.query(qry2, (err2, result2) => {
 if (err2) {  return res.status(500).json({ message: 'errr', status :500, wpstatus:0 });   }
 TermStatus = result2[0].term_taxonomy_id;
-TermCat = result2[2].term_taxonomy_id; 
+TermCat = result2[1].term_taxonomy_id;   
 let qry3 = "SELECT * FROM `wp_terms` where term_id='" +TermStatus + "'";   
 db.query(qry3, (err3, result3) => {
 if (err3) {  return res.status(500).json({ message: 'errr', status :500, wpstatus:0 });   } 
