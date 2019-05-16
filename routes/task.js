@@ -306,7 +306,7 @@ mytasklistwp:(req, res) =>   {
                   if (err2) {
                       return res.status(500).json({ message: 'errr', status :500, wpstatus:0 });
                   }
-                TermID = result2[1].term_taxonomy_id;  
+                TermID = result2[2].term_taxonomy_id;  
                 let usernameQuery3 = "SELECT * FROM `wp_terms` where term_id='" +TermID + "'";   
                 db.query(usernameQuery3, (err3, result3) => {
                 if (err3) {
@@ -663,15 +663,15 @@ let metaarrval;
             }); 
              
 			  
-			
-			  
-                  let usernameQuery103 ="INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES('" + wppostID + "','27','0')";       
+                  let usernameQuery103 ="INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES('" + wppostID + "','"+postcat+"','0')";       
               db.query(usernameQuery103, (err4, result4) => {  console.log("success after loop"); }); 
                 
 				
-				   let usernameQuery102 ="INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES('" + wppostID + "','30','0')";
+				  	   let usernameQuery102 ="INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES('" + wppostID + "','30','0')";
                 db.query(usernameQuery102, (err4, result4) => {  console.log("success in loop ");
               });
+			 
+			
 			   
 			  
               let usernameQuery2 = "UPDATE `wp_posts` SET `guid`='https://loginworks.net/portal/my-account/ticket/" + wppostID + "' WHERE ID='" +wppostID + "'";  
