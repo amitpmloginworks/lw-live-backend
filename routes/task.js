@@ -104,7 +104,7 @@ console.log("result[i].comment_img==",result[i].comment_img);
                     handsvar=2;      
                   } 
                  
-                  if(result[i].comment_img != null) { 
+                  if(result[i].comment_img != 0) { 
                     imgmetavalue=result[i].comment_img;    
                    // imgmetatitle=imgmetavalue.split(Urllinks+'/assets/img/')[1];
                     imgmetatitle=imgmetavalue.split('/assets/img/')[1];
@@ -992,7 +992,7 @@ var now = new Date().toLocaleString('en-AU', { timeZone: 'Asia/Kolkata' });
         let incrementval = 0; 
         let i=0;     
         var datecurrent = dateFormat(result[i].comment_date, "dd mmm yyyy");
-        if(result[i].comment_img != null) { 
+        if(result[i].comment_img != 0) {  
           imgmetavalue=result[i].comment_img;    
           //imgmetatitle=imgmetavalue.split(Urllinks+'/assets/img/')[1];
           imgmetatitle=imgmetavalue.split('/assets/img/')[1];
