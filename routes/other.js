@@ -116,10 +116,10 @@ getcountry:(req, res) => {
 
     paymentcredential:(req, res) => {  
         let userid=req.body.userid; 
-        let PaypalSandbox="AX9KVdo4JiKtCFIRNWXzkvNBLgr8Phn97l7HE6D_EzqP3xa1mKKT68yn40ffdjhrZzcWAv5oHaZsgNyr";
-        let PaypalProduction=""; 
+        let PaypalSandbox="ASPhz-hWkOZB2hM3EJsrW4CRlABF7UuqiwrlxNdawPb7jzu1-Z2P3-xrX4d4QbGFWZx8i3j4x93RCSjH";
+        let PaypalProduction="AXL-pwlPOyEAvyc25TRJ6lcC9GVjfyn- L_aciynyVDsdTyQrSNbBfTCyQ8He7lnLXiqd5tWxZ6VUZD5V"; 
 // // Environments: PayPalEnvironmentNoNetwork, PayPalEnvironmentSandbox, PayPalEnvironmentProduction		
-		let PaypalEnv="PayPalEnvironmentSandbox"; 
+		let PaypalEnv="PayPalEnvironmentProduction"; 
 		
 	let usernameQuery1 = "SELECT * FROM `wp_country`";     
   db.query(usernameQuery1, (err, result) => {  
