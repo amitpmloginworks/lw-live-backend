@@ -117,7 +117,7 @@ getcountry:(req, res) => {
     paymentcredential:(req, res) => {  
         let userid=req.body.userid; 
         let PaypalSandbox="";
-        let PaypalProduction="AXL-pwlPOyEAvyc25TRJ6lcC9GVjfyn- L_aciynyVDsdTyQrSNbBfTCyQ8He7lnLXiqd5tWxZ6VUZD5V"; 
+        let PaypalProduction="AXL-pwlPOyEAvyc25TRJ6lcC9GVjfyn-L_aciynyVDsdTyQrSNbBfTCyQ8He7lnLXiqd5tWxZ6VUZD5V"; 
 // // Environments: PayPalEnvironmentNoNetwork, PayPalEnvironmentSandbox, PayPalEnvironmentProduction		
 		let PaypalEnv="PayPalEnvironmentProduction"; 
 		
