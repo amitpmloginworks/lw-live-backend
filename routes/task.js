@@ -11,7 +11,9 @@ const randunique = uniqueRandom(10000000000, 99999999999);
          
 //var Urllinks="http://ec2-18-223-235-36.us-east-2.compute.amazonaws.com:3555"; 
 
-var Urllinks="http://ec2-3-15-11-19.us-east-2.compute.amazonaws.com:3555";  
+//var Urllinks="http://ec2-3-15-11-19.us-east-2.compute.amazonaws.com:3555"; NG 27th May
+
+var Urllinks="https://loginworks.net/portal/wp-content/uploads/2019/05/";
 
 module.exports = {  
  
