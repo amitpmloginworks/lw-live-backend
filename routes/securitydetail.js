@@ -277,11 +277,10 @@ upprofileimgwp:(req, res) => {
   let fileName = uploadedFile.name;   
   let fileExtension = uploadedFile.mimetype.split('/')[1]; 
   console.log("fileExtension==",fileExtension);   
-  //uploadedFile.mv(`public/assets/img/${fileName}`, (err ) => {   NG 27 May 
-   uploadedFile.mv(`https://loginworks.net/portal/wp-content/uploads/2019/05/${fileName}`, (err ) => {    
+  uploadedFile.mv(`public/assets/img/${fileName}`, (err ) => {    
     if (err) {  return res.status(500).json({ message: 'errr5',status :500,msg:err,wpstatus:0 });  }
     //profileimg=Urllinks+"/assets/img/"+fileName;   
-    profileimg="https://loginworks.net/portal/wp-content/uploads/2019/05/"+fileName;   //NG 27 May  
+    profileimg="/assets/img/"+fileName;     
         let Qry11 = "SELECT * from `wp_usermeta` where meta_key='_attachments' and user_id = '" + userid + "'";         
         db.query(Qry11, (err11, result11) => {    
           if (result11.length > 0) {
