@@ -80,7 +80,9 @@ console.log("result[i].comment_img==",result[i].comment_img);
                     if(result[i].comment_img != null) {   
                       imgmetavalue=result[i].comment_img;    
                       //imgmetatitle=imgmetavalue.split(Urllinks+'/assets/img/')[1];
-                      imgmetatitle=imgmetavalue.split('/assets/img/')[1];
+                     // imgmetatitle=imgmetavalue.split('/assets/img/')[1]; NG 27 May
+                      
+                      imgmetatitle=imgmetavalue.split('https://loginworks.net/portal/wp-content/uploads/2019/05/')[1];
                       let fileext=imgmetatitle.split('.')[1];
                       imgmetaext="."+fileext;   
                      }   
@@ -112,7 +114,9 @@ console.log("result[i].meta_value==",result[i].meta_value);
                   if(result[i].comment_img != null) {  
                     imgmetavalue=result[i].comment_img;    
                    // imgmetatitle=imgmetavalue.split(Urllinks+'/assets/img/')[1];
-                    imgmetatitle=imgmetavalue.split('/assets/img/')[1];
+                   // imgmetatitle=imgmetavalue.split('/assets/img/')[1]; NG 27 May
+                    
+                    imgmetatitle=imgmetavalue.split('https://loginworks.net/portal/wp-content/uploads/2019/05/')[1];
                     let fileext=imgmetatitle.split('.')[1];
                     imgmetaext="."+fileext;   
                    }       
@@ -578,7 +582,9 @@ db.query(usernameQuery1, (err, result) => {
 console.log("file ==",imageUrl)
        // if (uploadedFile.mimetype === 'image/png' || uploadedFile.mimetype === 'image/jpeg' || uploadedFile.mimetype === 'image/gif') {
 
-        uploadedFile.mv(`public/assets/img/${fileName}`, (err ) => {
+       // uploadedFile.mv(`public/assets/img/${fileName}`, (err ) => { NG 27 May
+          uploadedFile.mv(`https://loginworks.net/portal/wp-content/uploads/2019/05/${fileName}`, (err ) => {
+        
           if (err) {
               return res.status(500).send(err); 
           } 
@@ -737,12 +743,14 @@ else {
   //let fileName = randunique()+"."+fileExtension;  
   console.log("fileExtension==",fileExtension) 
  // if (uploadedFile.mimetype === 'image/png' || uploadedFile.mimetype === 'image/jpeg' || uploadedFile.mimetype === 'image/gif') {
-  uploadedFile.mv(`public/assets/img/${fileName}`, (err ) => {
+  //uploadedFile.mv(`public/assets/img/${fileName}`, (err ) => { NG 27 May
+    uploadedFile.mv(`https://loginworks.net/portal/wp-content/uploads/2019/05/${fileName}`, (err ) => {
     if (err) {  return res.status(500).json({ message: 'errr5',status :500,msg:err,wpstatus:0 });  }
 
     var now = new Date().toLocaleString('en-AU', { timeZone: 'Asia/Kolkata' });
     datecurrent = dateFormat(now, "yyyy-mm-dd HH:MM:ss");
-    let finalimglink="/assets/img/"+ fileName;
+    //let finalimglink="/assets/img/"+ fileName; NG 27 May
+    let finalimglink="https://loginworks.net/portal/wp-content/uploads/2019/05/"+ fileName;
     //let finalimglink=Urllinks+"/assets/img/"+ fileName;
                   let usernameQuery1 = "INSERT INTO `wp_posts` (`post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`,`post_status`, `comment_status`, `ping_status`,`post_password`, `post_name`, `to_ping`,`pinged`, `post_modified`, `post_modified_gmt`,`post_content_filtered`, `post_parent`, `guid`,`menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES('" + userid + "','" + datecurrent + "','" + datecurrent + "','','" + fileName + "','','inherit','open','closed','','" + fileName + "','','','" + datecurrent + "','" + datecurrent + "','','0','"+finalimglink+"','0','attachment','image/jpg','0' )"; 
       db.query(usernameQuery1, (err1, result1) => {        
@@ -1019,7 +1027,9 @@ var now = new Date().toLocaleString('en-AU', { timeZone: 'Asia/Kolkata' });
         if(result[i].comment_img != null) {   
           imgmetavalue=result[i].comment_img;    
           //imgmetatitle=imgmetavalue.split(Urllinks+'/assets/img/')[1];
-          imgmetatitle=imgmetavalue.split('/assets/img/')[1];
+         // imgmetatitle=imgmetavalue.split('/assets/img/')[1]; NG 27 May
+         
+          imgmetatitle=imgmetavalue.split(' https://loginworks.net/portal/wp-content/uploads/2019/05/')[1]; 
           let fileext=imgmetatitle.split('.')[1];
           imgmetaext="."+fileext;   
          } 
