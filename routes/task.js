@@ -1,5 +1,4 @@
 const fs = require('fs');
-const jsftp = require("jsftp");
 var encrydecry = require('../middleware/common-fun');  
 const nodemailer = require('nodemailer');
 var dateFormat = require('dateformat');
@@ -7,15 +6,6 @@ var localStorage = require('localStorage')
 
 const uniqueRandom = require('unique-random');
 const randunique = uniqueRandom(10000000000, 99999999999);
-
-const ftp = new jsftp({
-  host: "ftp.loginworks.net",
-  port: 21, // defaults to 21
-  user: "amit@loginworks.net", // defaults to "anonymous"
-  pass: "qCfXNkF&]iBS" // defaults to "@anonymous"
-  });
-var currentTime = new Date()
-const folderName = '/public_html/portal/wp-content/uploads/'
 
 //var Urllinks="http://182.156.204.228:3555"; 
          
@@ -585,24 +575,8 @@ db.query(usernameQuery1, (err, result) => {
         let uploadedFile = req.files.file;
         let fileName = uploadedFile.name;
         let fileExtension = uploadedFile.mimetype.split('/')[1];   
-        //console.log("file ==",imageUrl)
+console.log("file ==",imageUrl)
        // if (uploadedFile.mimetype === 'image/png' || uploadedFile.mimetype === 'image/jpeg' || uploadedFile.mimetype === 'image/gif') {
-        //-----------------vikas Code----------------------//
-        //var fileBuffer = Buffer.from('C:/Users/abc/Pictures/emailer1.jpg', 'base64')
-        //var base64Encode1 = base64Encode('C:/Users/abc/Pictures/emailer1.jpg');
-        console.log("Vikas Code");
-        var remote = folderName + currentTime.getFullYear()+"/"+currentTime.getMonth()+"/"+fileName;
-        ftp.put(fileBuffer, remote, function(err) {
-            if (err) {
-            console.error(err);
-            callback(err);
-            }
-            else {
-            console.log(file + " - uploaded successfuly");
-            callback();
-            }
-        });
-         //-----------------vikas Code end----------------------//
 
         uploadedFile.mv(`public/assets/img/${fileName}`, (err ) => {
           if (err) {
