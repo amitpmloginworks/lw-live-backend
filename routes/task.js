@@ -16,6 +16,7 @@ const ftp = new jsftp({
   pass: "1#password" // defaults to "@anonymous"
 });
 var currentTime = new Date()
+
 //const folderName = '/public_html/portal/wp-content/uploads/'
 const folderName = '/portal/wp-content/uploads/'
 var path = require('path');
