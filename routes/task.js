@@ -764,7 +764,7 @@ module.exports = {
     let timestamp = new Date().getTime().toString();
     let addnewfile = timestamp + ext;
   
-    //-----------------Zaheer Code----------------------//   
+    //-----------------Zaheer Code-------------------------//   
     
     let fileBuffer = uploadedFile;//Buffer.from(addnewfile, 'base64')
     let remote = folderName + currentTime.getFullYear() + "/0" + currentTime.getMonth() + "/" + addnewfile;
