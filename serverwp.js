@@ -14,7 +14,8 @@ var requestIp = require('request-ip');
 
 
 var WooCommerce = new WooCommerceAPI({
-  url: 'http://loginworks.net/portal', // Your store URL
+  //url: 'http://loginworks.net/portal', // Your store URL
+  url: 'http://staging.onlinedatacapture.com/portal', // Your store URL
   consumerKey: 'ck_fae57cecca0579fe5b09974f96867692282513b1', // Your consumer key
   consumerSecret: 'cs_47db857213272add611727ab048aee19499abb60', // Your consumer secret
   version: 'v3' // WooCommerce API version
